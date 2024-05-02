@@ -1,17 +1,38 @@
 package br.xadrez;
 
-public class Pecas {
+public abstract class Pecas extends Tabuleiro{
+    private String cor;
+    private int linha;
+    private int coluna;
 
-    protected static int x; // posição de cada peça
-    protected static int y; // posição de cada peça
-    protected boolean brancas; // cor da peça
-
-    public Pecas(int x, int y, boolean brancas){
-        this.x = x;
-        this.y = y;
-        this.brancas = brancas;
+    public Pecas(String cor, int linha, int coluna) {
+        this.cor = cor;
+        this.linha = linha;
+        this.coluna = coluna;
     }
 
-    public abstract boolean MovimentoValido(int novoX, int novoy);
-}
+    // Getters e setters
+    public String getCor() {
+        return cor;
+    }
 
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public int getLinha() {
+        return linha;
+    }
+
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+}
